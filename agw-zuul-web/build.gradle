@@ -1,0 +1,33 @@
+apply plugin: 'war'
+apply plugin: 'spring-boot'
+
+project.description = 'API Gateway Zuul web'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile("org.springframework.boot:spring-boot-starter-web:1.4.1.RELEASE")
+	
+	compile("org.springframework.cloud:spring-cloud-starter-zuul:1.2.0.RELEASE")
+	// security
+	compile("org.springframework.security.oauth:spring-security-oauth2:2.0.11.RELEASE")
+	
+	compile("org.springframework.boot:spring-boot-actuator:1.4.1.RELEASE")
+	// server
+	providedCompile("org.springframework.boot:spring-boot-starter-tomcat:1.4.1.RELEASE")
+}
+
+war {
+	archiveName 'gundam-agw-zuul.war'
+}
+
+buildscript {
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.1.RELEASE")
+	}
+	repositories {
+		mavenCentral()
+	}
+}

@@ -1,0 +1,3 @@
+rootProject.name = 'gundam-agw-zuul'
+
+include 'agw-zuul-web'
